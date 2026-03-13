@@ -7,30 +7,46 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="top-nav">
-    <h2>PayNest</h2>
-    <nav>
-      <a href="dashboard.html">Dashboard</a>
+  <div class="mobile-app">
+    <nav class="bottom-nav">
+      <a class="active" href="dashboard.html">Home</a>
+      <a href="add_expense.html">Expense</a>
+      <a href="coming_soon.html">Scan</a>
       <a href="settings.html">Settings</a>
     </nav>
-  </header>
-  <main class="layout">
-    <aside class="sidebar">
-      <button id="new-group-btn" class="btn primary">+ Create Group</button>
-      <a class="btn" href="add_expense.html">+ Add Expense</a>
-      <a class="btn" href="coming_soon.html">Scan Receipt (AI)</a>
-    </aside>
-    <section class="content">
-      <div class="grid cards">
-        <article class="card"><h3>Total Receivable</h3><p id="receivable">₹0</p></article>
-        <article class="card"><h3>Total Payable</h3><p id="payable">₹0</p></article>
-      </div>
-      <section class="card">
-        <h3>Your Groups</h3>
-        <div id="groups-list"></div>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div>
+          <div class="brand">PayNest</div>
+          <div class="subtitle">Smart expense sharing</div>
+        </div>
+        <button id="new-group-btn" class="btn primary">+ Group</button>
+      </header>
+
+      <section class="app-content">
+        <div class="grid-2">
+          <article class="metric">
+            <span>Total Receivable</span>
+            <strong id="receivable">₹0</strong>
+          </article>
+          <article class="metric">
+            <span>Total Payable</span>
+            <strong id="payable">₹0</strong>
+          </article>
+        </div>
+
+        <section class="card">
+          <div class="row">
+            <h3>Your Groups</h3>
+            <a class="btn ghost" href="add_expense.html">+ Expense</a>
+          </div>
+          <div id="groups-list" class="list"></div>
+        </section>
       </section>
-    </section>
-  </main>
+    </main>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/dashboard.js"></script>
 </body>

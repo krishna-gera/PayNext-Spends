@@ -8,7 +8,15 @@ async function fetchGroups() {
   if (!res.ok) return;
   const groups = await res.json();
   const el = document.getElementById("groups-list");
-  el.innerHTML = groups.map(g => `<div class="card"><h4>${g.name}</h4><p>${g.currency}</p><a href="group.html?group_id=${g.id}">Open</a></div>`).join("");
+  el.innerHTML = groups.map((g) => `
+    <a class="list-item" href="group.html?group_id=${g.id}">
+      <div>
+        <strong>${g.name}</strong>
+        <small>${g.currency}</small>
+      </div>
+      <span>Open →</span>
+    </a>
+  `).join("");
 }
 
 async function createGroup() {
@@ -32,9 +40,7 @@ function initRealtime() {
       notify("New expense added");
       fetchGroups();
     })
-    .on("postgres_changes", { event: "INSERT", schema: "public", table: "settlements" }, () => {
-      notify("Settlement recorded");
-    })
+    .on("postgres_changes", { event: "INSERT", schema: "public", table: "settlements" }, () => notify("Settlement recorded"))
     .on("postgres_changes", { event: "INSERT", schema: "public", table: "group_members" }, () => {
       notify("A user was added to a group");
       fetchGroups();

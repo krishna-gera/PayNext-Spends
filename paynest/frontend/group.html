@@ -7,27 +7,49 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="top-nav"><h2 id="group-title">Group</h2><a href="dashboard.html">Back</a></header>
-  <main class="layout single">
-    <section class="card">
-      <h3>Members</h3>
-      <ul id="members"></ul>
-    </section>
-    <section class="card">
-      <h3>Balances</h3>
-      <ul id="balances"></ul>
-    </section>
-    <section class="card">
-      <h3>Expense Timeline</h3>
-      <ul id="expenses"></ul>
-    </section>
-    <section class="card">
-      <h3>Spending Analytics</h3>
-      <canvas id="usersChart"></canvas>
-      <canvas id="categoriesChart"></canvas>
-      <canvas id="monthsChart"></canvas>
-    </section>
-  </main>
+  <div class="mobile-app">
+    <nav class="bottom-nav">
+      <a href="dashboard.html">Home</a>
+      <a href="add_expense.html">Expense</a>
+      <a href="coming_soon.html">Scan</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div>
+          <div class="brand" id="group-title">Group</div>
+          <div class="subtitle">Track balances and timeline</div>
+        </div>
+        <a href="dashboard.html" class="btn">Back</a>
+      </header>
+
+      <section class="app-content">
+        <section class="card">
+          <h3>Members</h3>
+          <ul id="members" class="list"></ul>
+        </section>
+
+        <section class="card">
+          <h3>Balances</h3>
+          <ul id="balances" class="list"></ul>
+        </section>
+
+        <section class="card">
+          <h3>Expense Timeline</h3>
+          <ul id="expenses" class="list"></ul>
+        </section>
+
+        <section class="card">
+          <h3>Spending Analytics</h3>
+          <canvas id="usersChart"></canvas>
+          <canvas id="categoriesChart"></canvas>
+          <canvas id="monthsChart"></canvas>
+        </section>
+      </section>
+    </main>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/analytics.js"></script>

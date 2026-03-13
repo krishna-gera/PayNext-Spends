@@ -6,25 +6,61 @@
   <title>Add Expense</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="centered-page">
-  <form id="expense-form" class="card form-card">
-    <h2>Add Shared Expense</h2>
-    <input name="group_id" placeholder="Group ID" required />
-    <input name="title" placeholder="Title" required />
-    <input name="amount" type="number" step="0.01" placeholder="Amount" required />
-    <input name="paid_by" placeholder="Payer User ID" required />
-    <input name="date" type="date" required />
-    <select name="split_type">
-      <option value="equal">Equal</option>
-      <option value="percentage">Percentage</option>
-      <option value="exact">Exact</option>
-      <option value="share">Share-based</option>
-    </select>
-    <textarea name="description" placeholder="Description"></textarea>
-    <input name="participants" placeholder='Participants JSON e.g. [{"user_id":"1","value":50}]' required />
-    <button class="btn primary" type="submit">Save Expense</button>
-    <a href="dashboard.html">Go to Dashboard</a>
-  </form>
+<body>
+  <div class="mobile-app">
+    <nav class="bottom-nav">
+      <a href="dashboard.html">Home</a>
+      <a class="active" href="add_expense.html">Expense</a>
+      <a href="coming_soon.html">Scan</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div>
+          <div class="brand">Add Shared Expense</div>
+          <div class="subtitle">Split equally or custom</div>
+        </div>
+        <a href="dashboard.html" class="btn">Back</a>
+      </header>
+
+      <section class="app-content">
+        <form id="expense-form" class="card form-card" style="width:100%;">
+          <label>Group ID</label>
+          <input name="group_id" placeholder="Group ID" required />
+
+          <label>Title</label>
+          <input name="title" placeholder="Dinner / Taxi" required />
+
+          <label>Amount</label>
+          <input name="amount" type="number" step="0.01" placeholder="0.00" required />
+
+          <label>Paid by (user ID)</label>
+          <input name="paid_by" placeholder="Payer User ID" required />
+
+          <label>Date</label>
+          <input name="date" type="date" required />
+
+          <label>Split Type</label>
+          <select name="split_type">
+            <option value="equal">Equal</option>
+            <option value="percentage">Percentage</option>
+            <option value="exact">Exact</option>
+            <option value="share">Share-based</option>
+          </select>
+
+          <label>Description</label>
+          <textarea name="description" placeholder="Optional notes"></textarea>
+
+          <label>Participants JSON</label>
+          <input name="participants" placeholder='[{"user_id":"id1","value":50}]' required />
+
+          <button class="btn primary block" type="submit">Save Expense</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
   <script src="js/expenses.js"></script>
 </body>
 </html>

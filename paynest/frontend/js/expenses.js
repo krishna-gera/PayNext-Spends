@@ -8,7 +8,15 @@ async function loadExpenses() {
   if (!res.ok) return;
   const data = await res.json();
   const list = document.getElementById("expenses");
-  list.innerHTML = data.map(e => `<li>${e.date}: ${e.title} - ${e.amount}</li>`).join("");
+  list.innerHTML = data.map((e) => `
+    <li class="list-item">
+      <div>
+        <strong>${e.title}</strong>
+        <small>${e.date}</small>
+      </div>
+      <span>${e.amount}</span>
+    </li>
+  `).join("");
 }
 
 async function createExpense(event) {
@@ -33,7 +41,7 @@ async function createExpense(event) {
 
 function notify(message) {
   if (!("Notification" in window)) return;
-  Notification.requestPermission().then(permission => {
+  Notification.requestPermission().then((permission) => {
     if (permission === "granted") new Notification(message);
   });
 }
