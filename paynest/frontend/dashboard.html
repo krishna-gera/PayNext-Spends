@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayNest Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="mobile-app">
+    <nav class="bottom-nav">
+      <a class="active" href="dashboard.html">Home</a>
+      <a href="add_expense.html">Expense</a>
+      <a href="coming_soon.html">Scan</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div>
+          <div class="brand">PayNest</div>
+          <div class="subtitle">Smart expense sharing</div>
+        </div>
+        <button id="new-group-btn" class="btn primary">+ Group</button>
+      </header>
+
+      <section class="app-content">
+        <div class="grid-2">
+          <article class="metric">
+            <span>Total Receivable</span>
+            <strong id="receivable">₹0</strong>
+          </article>
+          <article class="metric">
+            <span>Total Payable</span>
+            <strong id="payable">₹0</strong>
+          </article>
+        </div>
+
+        <section class="card">
+          <div class="row">
+            <h3>Your Groups</h3>
+            <a class="btn ghost" href="add_expense.html">+ Expense</a>
+          </div>
+          <div id="groups-list" class="list"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

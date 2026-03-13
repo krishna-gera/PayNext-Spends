@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "routes": [
+    {
+      "src": "^/$",
+      "dest": "/paynest/frontend/index.html"
+    },
+    {
+      "src": "^/([a-zA-Z0-9_-]+)$",
+      "dest": "/paynest/frontend/$1.html"
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/paynest/frontend/$1"
+    }
+  ]
+}
