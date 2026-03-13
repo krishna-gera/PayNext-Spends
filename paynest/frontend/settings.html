@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayNest Settings</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="mobile-app">
+    <nav class="bottom-nav">
+      <a href="dashboard.html">Home</a>
+      <a href="add_expense.html">Expense</a>
+      <a href="coming_soon.html">Scan</a>
+      <a class="active" href="settings.html">Settings</a>
+    </nav>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div>
+          <div class="brand">Settings</div>
+          <div class="subtitle">Profile and defaults</div>
+        </div>
+      </header>
+
+      <section class="app-content">
+        <div class="card form-card" style="width:100%;">
+          <label>Default Currency</label>
+          <select id="currency">
+            <option>INR</option>
+            <option>USD</option>
+            <option>EUR</option>
+            <option>GBP</option>
+          </select>
+          <button id="save-settings" class="btn primary block">Save</button>
+          <p id="profile" class="subtitle"></p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/auth.js"></script>
+</body>
+</html>

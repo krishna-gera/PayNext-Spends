@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayNest Group</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="mobile-app">
+    <nav class="bottom-nav">
+      <a href="dashboard.html">Home</a>
+      <a href="add_expense.html">Expense</a>
+      <a href="coming_soon.html">Scan</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+
+    <main class="app-main">
+      <header class="app-header">
+        <div>
+          <div class="brand" id="group-title">Group</div>
+          <div class="subtitle">Track balances and timeline</div>
+        </div>
+        <a href="dashboard.html" class="btn">Back</a>
+      </header>
+
+      <section class="app-content">
+        <section class="card">
+          <h3>Members</h3>
+          <ul id="members" class="list"></ul>
+        </section>
+
+        <section class="card">
+          <h3>Balances</h3>
+          <ul id="balances" class="list"></ul>
+        </section>
+
+        <section class="card">
+          <h3>Expense Timeline</h3>
+          <ul id="expenses" class="list"></ul>
+        </section>
+
+        <section class="card">
+          <h3>Spending Analytics</h3>
+          <canvas id="usersChart"></canvas>
+          <canvas id="categoriesChart"></canvas>
+          <canvas id="monthsChart"></canvas>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/groups.js"></script>
+  <script src="js/expenses.js"></script>
+  <script src="js/settlements.js"></script>
+</body>
+</html>
